@@ -211,15 +211,19 @@ console.log("stupid rates");
           {/* Currency Selectors */}
           <div className="space-y-3">
             {/* From */}
-            <div className="flex items-center justify-between bg-slate-50 rounded-xl p-3">
-              <span className="text-slate-500 text-sm w-12">From</span>
+            <div className="bg-slate-100 rounded-xl p-3">
+              <span className="text-slate-600 text-sm font-medium block mb-2">From</span>
               <Select value={fromCurrency} onValueChange={setFromCurrency}>
-                <SelectTrigger className="flex-1 border-0 bg-transparent shadow-none h-auto p-0 focus:ring-0">
+                <SelectTrigger className="w-full border-0 bg-white rounded-lg shadow-none h-auto p-0 focus:ring-0">
                   <SelectValue>
-                    <div className="flex items-center gap-2">
-                      {/* <span className="text-2xl">{fromData?.flag}</span> */}
-                      {/* <span className="font-semibold text-slate-800">{fromCurrency}</span> */}
-                      {/* <span className="text-slate-200 text-xl">- {fromData?.name}</span> */}
+                    <div className="flex items-center justify-between w-full px-3 py-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{fromData?.flag}</span>
+                        <span className="font-semibold text-slate-800">{fromCurrency} - {fromData?.name}</span>
+                      </div>
+                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </SelectValue>
                 </SelectTrigger>
@@ -249,15 +253,19 @@ console.log("stupid rates");
             </div>
 
             {/* To */}
-            <div className="flex items-center justify-between bg-slate-50 rounded-xl p-3">
-              <span className="text-slate-500 text-sm w-12">To</span>
+            <div className="bg-slate-100 rounded-xl p-3">
+              <span className="text-slate-600 text-sm font-medium block mb-2">To</span>
               <Select value={toCurrency} onValueChange={setToCurrency}>
-                <SelectTrigger className="flex-1 border-0 bg-transparent shadow-none h-auto p-0 focus:ring-0">
+                <SelectTrigger className="w-full border-0 bg-white rounded-lg shadow-none h-auto p-0 focus:ring-0">
                   <SelectValue>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">{toData?.flag}</span>
-                      <span className="font-semibold text-slate-800">{toCurrency}</span>
-                      <span className="text-slate-500 text-sm">- {toData?.name}</span>
+                    <div className="flex items-center justify-between w-full px-3 py-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{toData?.flag}</span>
+                        <span className="font-semibold text-slate-800">{toCurrency} - {toData?.name}</span>
+                      </div>
+                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </SelectValue>
                 </SelectTrigger>
