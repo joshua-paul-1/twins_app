@@ -29,6 +29,18 @@ export default function Home() {
 
 const useFallbackRates = import.meta.env.VITE_USE_FALLBACK === 'true';
 
+
+
+ const getBaseRate = () => {
+    if (!rate) return null;
+    
+    // If converting from INR to TZS, reduce by 1.3%
+    if (fromCurrency === 'INR' && toCurrency === 'TZS') {
+      return rate * (1 - 0.013);
+    }
+    
+    return rate;
+  };
 // Apply markup based on rate type
   const getMarkup = () => {
     if (rateType === 'market') return 0;
@@ -54,8 +66,8 @@ const useFallbackRates = import.meta.env.VITE_USE_FALLBACK === 'true';
     const markups = rateType === 'student' ? studentMarkups : businessMarkups;
     return markups[`${fromCurrency}-${toCurrency}`] || 0;
   };
-  
-  const finalRate = rate ? rate + getMarkup() : rate;
+  const baseRate = getBaseRate();
+  const finalRate = baseRate ? baseRate + getMarkup() : baseRate;
   const convertedAmount = amount && finalRate ? (parseFloat(amount) * finalRate).toFixed(2) : '0.00';
 
 
