@@ -47,7 +47,7 @@ const useFallbackRates = import.meta.env.VITE_USE_FALLBACK === 'true';
     
     const studentMarkups = {
       'TZS-INR': -0.01,
-      'INR-TZS': -1,
+      'INR-TZS': +3,
       'TZS-USD': 0.00002,
       'INR-USD': 0.001,
       'USD-TZS': 10,
@@ -55,7 +55,7 @@ const useFallbackRates = import.meta.env.VITE_USE_FALLBACK === 'true';
     };
     
     const businessMarkups = {
-      'TZS-INR': 0.015,
+      'TZS-INR': -0.003,
       'INR-TZS': -3,
       'TZS-USD': 0.00003,
       'INR-USD': 0.0015,
