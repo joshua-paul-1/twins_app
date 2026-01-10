@@ -67,7 +67,7 @@ const useFallbackRates = import.meta.env.VITE_USE_FALLBACK === 'true';
     return markups[`${fromCurrency}-${toCurrency}`] || 0;
   };
   const baseRate = getBaseRate();
-  const finalRate = rate ? rate + getMarkup() : rate;
+  const finalRate = baseRate ? baseRate + getMarkup() : baseRate;
   const convertedAmount = amount && finalRate ? (parseFloat(amount) * finalRate).toFixed(2) : '0.00';
 
 
